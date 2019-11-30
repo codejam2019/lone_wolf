@@ -4,7 +4,7 @@ var schema = mongoose.Schema;
 const citySchema = new schema({
   name: {
     type: String,
-    unique : true,
+    //unique : true,
     required: true
   },
   country: {

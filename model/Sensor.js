@@ -4,7 +4,7 @@ var schema = mongoose.Schema;
 const sensorSchema = new schema({
     name: {
         type: String,
-        unique : true,
+        //unique : true,
         required: true
     },
     status: {
