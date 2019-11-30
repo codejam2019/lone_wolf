@@ -14,6 +14,10 @@ mongodb
  - npm init
  - npm i pm2 -g
 
+
+## How to test 
+    - npm test
+
 ## How to run
   - start mongod server 
   - run command to start the server
@@ -31,3 +35,44 @@ mongodb
 
 ## test case (using jasmine)
   - not completed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## intro
+  
+
+## Focus
+   working solution, scalability, performance
+
+   
+##  not covered
+- authentication
+- validating query parameter
+- how sensors will talk with API
+
+
+## covered
+ - DB module design and development
+ - system design
+ - scalability
+
+
+
+# TECH STACk
+
+  Nodejs (no blocking, high performance)
+  mongodb (high scalability, automatic scaling)
+
+
+
