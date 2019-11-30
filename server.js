@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const serverConfig = require("./config");
 const dev = serverConfig.NODE_ENV !== "production";
 const app = next({ dev });
-const fileUpload = require('express-fileupload');
 const handle = app.getRequestHandler();
 const cookieParser = require("cookie-parser");
 var compression = require("compression");
@@ -30,7 +29,7 @@ app.prepare().then(() => {
     }
 
     server.use(bodyParser.json({ limit: '50mb', extended: true }));
-    //server.use(express.static("static"));
+    server.use(express.static("static"));
 
 
     //routes
@@ -53,6 +52,10 @@ app.prepare().then(() => {
         res.json({ msg: "in progress" })
     });
 
+
+    /*
+       UI part is remaining so commenting below part that will invoke pages with nextjs react routing
+    */
     // server.get("*", (req, res) => {
     //     //return handle(req, res);
     // });
@@ -64,6 +67,8 @@ app.prepare().then(() => {
             console.log("Mongodb conection is Successfull");
             server.listen(serverConfig.PORT, () => {
                 console.log("Server is running at port no " + serverConfig.PORT);
+
+
             });
         })
         .catch(err => console.error(err));
