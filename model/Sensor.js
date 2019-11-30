@@ -13,4 +13,4 @@ const sensorSchema = new schema({
     }
 });
 
-module.exports = sensor = sensorSchema.model("city", citySchema);
+module.exports = sensor = mongoose.model("sensor", sensorSchema);

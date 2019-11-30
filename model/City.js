@@ -22,4 +22,4 @@ const citySchema = new schema({
   }]
 });
 
-module.exports = client = mongoose.model("city", citySchema);
+module.exports = city = mongoose.model("city", citySchema);

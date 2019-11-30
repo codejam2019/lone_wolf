@@ -39,6 +39,16 @@ app.prepare().then(() => {
         require(path.resolve(__dirname, "./api/city/city.route"))
     );
 
+    server.use(
+        "/api/sensor",
+        require(path.resolve(__dirname, "./api/sensor/sensor.route"))
+    );
+
+    server.use(
+        "/api/log",
+        require(path.resolve(__dirname, "./api/log/log.route"))
+    );
+
     server.get("*", (req, res) => {
         res.json({ msg: "in progress" })
     });
