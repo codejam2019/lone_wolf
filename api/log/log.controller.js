@@ -104,4 +104,159 @@ logControllers.getRainDetails = function (req, res) {
     }
 }
 
+logControllers.getHottestCity = function (req, res) {
+    var start = new Date(req.query.start_date.substring(0, 4), req.query.start_date.substring(4, 6) - 1, req.query.start_date.substring(6));
+    var end = new Date(req.query.end_date.substring(0, 4), req.query.end_date.substring(4, 6) - 1, req.query.end_date.substring(6));
+
+    Log.aggregate([
+        {
+            $match: {
+                $and: [
+                    { event_time: { "$gte": start, "$lt": end } },
+                    { event_type: "temp" }
+                ]
+            }
+        },
+        {
+            $group: {
+                _id: "$city_id",
+                average_value: { $avg: "$event_value_in_mm" },
+                count: { $sum: 1 }
+            }
+        }
+    ]).then(function (list) {
+        if (list.length == 0) {
+            res.json({ msg: "no records present" })
+        } else {
+            var max = -1;
+            var city_id = "";
+            list.map((entry) => {
+                if (Number(entry.average_value) > Number(max)) {
+                    max = entry.average_value;
+                    city_id = entry._id;
+                }
+            })
+            res.json({ city_id: city_id, value: max })
+        }
+
+    })
+}
+
+
+logControllers.getCoolest = function (req, res) {
+    var start = new Date(req.query.start_date.substring(0, 4), req.query.start_date.substring(4, 6) - 1, req.query.start_date.substring(6));
+    var end = new Date(req.query.end_date.substring(0, 4), req.query.end_date.substring(4, 6) - 1, req.query.end_date.substring(6));
+
+    Log.aggregate([
+        {
+            $match: {
+                $and: [
+                    { event_time: { "$gte": start, "$lt": end } },
+                    { event_type: "temp" }
+                ]
+            }
+        },
+        {
+            $group: {
+                _id: "$city_id",
+                average_value: { $avg: "$event_value_in_mm" },
+                count: { $sum: 1 }
+            }
+        }
+    ]).then(function (list) {
+        if (list.length == 0) {
+            res.json({ msg: "no records present" })
+        } else {
+            var min = -1;
+            var city_id = "";
+            list.map((entry) => {
+                if (Number(entry.average_value) < Number(max)) {
+                    min = entry.average_value;
+                    city_id = entry._id;
+                }
+            })
+            res.json({ city_id: city_id, value: min })
+        }
+
+    })
+}
+
+logControllers.getWettest = function (req, res) {
+    var start = new Date(req.query.start_date.substring(0, 4), req.query.start_date.substring(4, 6) - 1, req.query.start_date.substring(6));
+    var end = new Date(req.query.end_date.substring(0, 4), req.query.end_date.substring(4, 6) - 1, req.query.end_date.substring(6));
+
+    Log.aggregate([
+        {
+            $match: {
+                $and: [
+                    { event_time: { "$gte": start, "$lt": end } },
+                    { event_type: "rain" }
+                ]
+            }
+        },
+        {
+            $group: {
+                _id: "$city_id",
+                average_value: { $avg: "$event_value_in_mm" },
+                count: { $sum: 1 }
+            }
+        }
+    ]).then(function (list) {
+        if (list.length == 0) {
+            res.json({ msg: "no records present" })
+        } else {
+            var max = -1;
+            var city_id = "";
+            list.map((entry) => {
+                if (Number(entry.average_value) > Number(max)) {
+                    max = entry.average_value;
+                    city_id = entry._id;
+                }
+            })
+            res.json({ city_id: city_id, value: max })
+        }
+
+    })
+}
+
+
+logControllers.getDryest = function (req, res) {
+    var start = new Date(req.query.start_date.substring(0, 4), req.query.start_date.substring(4, 6) - 1, req.query.start_date.substring(6));
+    var end = new Date(req.query.end_date.substring(0, 4), req.query.end_date.substring(4, 6) - 1, req.query.end_date.substring(6));
+
+    Log.aggregate([
+        {
+            $match: {
+                $and: [
+                    { event_time: { "$gte": start, "$lt": end } },
+                    { event_type: "rain" }
+                ]
+            }
+        },
+        {
+            $group: {
+                _id: "$city_id",
+                average_value: { $avg: "$event_value_in_mm" },
+                count: { $sum: 1 }
+            }
+        }
+    ]).then(function (list) {
+        if (list.length == 0) {
+            res.json({ msg: "no records present" })
+        } else {
+            var min = -1;
+            var city_id = "";
+            list.map((entry) => {
+                if (Number(entry.average_value) < Number(max)) {
+                    min = entry.average_value;
+                    city_id = entry._id;
+                }
+            })
+            res.json({ city_id: city_id, value: min })
+        }
+
+    })
+}
+
+
 module.exports = logControllers;
