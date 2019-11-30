@@ -5,7 +5,7 @@
 
 ## required (Installed)
 nodejs 
-mongoose
+mongodb
 
 
 ## How to Deploy 
