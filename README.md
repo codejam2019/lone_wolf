@@ -18,6 +18,8 @@ mongodb
   - start mongod server 
   - pm2 start ecosystem.config.js
 
+## How to monitor
+  - pm2 monit
 
 
 
