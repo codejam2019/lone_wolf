@@ -20,5 +20,11 @@ mongodb
 
 
 
+
+## How to use APIS
+ please visit <componet_name>.route.controller.js in /api  directory 
+
+
+
 ## test case (using jasmine)
   - not completed
