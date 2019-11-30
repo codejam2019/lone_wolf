@@ -29,6 +29,7 @@
     "express-fileupload": "^1.1.5",
     "express-request-id": "^1.4.1",
     "isomorphic-unfetch": "^3.0.0",
+    "jasmine": "^3.5.0",
     "log-timestamp": "^0.3.0",
     "mongoose": "^5.4.15",
     "next": "^5.0.0",

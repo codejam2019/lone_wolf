@@ -1,9 +1,21 @@
 # lone_wolf
 
+## component Diagram
+./component.jpeg
+./schema.jpeg
 
 
-## How to Run
+
+## How to Deploy 
 
  - clone the repo
  - npm init
- - pm2 start ecosystem.config.js
+
+
+## How to run
+  - pm2 start ecosystem.config.js
+
+
+
+## test case (using jasmine)
+  - not completed
