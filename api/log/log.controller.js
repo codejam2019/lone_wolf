@@ -170,7 +170,7 @@ logControllers.getCoolest = function (req, res) {
             var min = -1;
             var city_id = "";
             list.map((entry) => {
-                if (Number(entry.average_value) < Number(max)) {
+                if (Number(entry.average_value) < Number(min)) {
                     min = entry.average_value;
                     city_id = entry._id;
                 }
@@ -247,7 +247,7 @@ logControllers.getDryest = function (req, res) {
             var min = -1;
             var city_id = "";
             list.map((entry) => {
-                if (Number(entry.average_value) < Number(max)) {
+                if (Number(entry.average_value) < Number(min)) {
                     min = entry.average_value;
                     city_id = entry._id;
                 }
