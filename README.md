@@ -16,7 +16,7 @@ mongodb
 
 ## How to run
   - start mongod server 
-  - pm2 start ecosystem.config.js
+  - pm2 start ecosystem.config.js (running server with cluster mode with max node upto 5)
 
 ## How to monitor
   - pm2 monit
