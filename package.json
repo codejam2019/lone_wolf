@@ -1,0 +1,19 @@
+{
+  "name": "lone_wolf",
+  "version": "1.0.0",
+  "description": "weather system",
+  "main": "server.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codejam2019/lone_wolf.git"
+  },
+  "author": "Kishor Jagadale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codejam2019/lone_wolf/issues"
+  },
+  "homepage": "https://github.com/codejam2019/lone_wolf#readme"
+}
