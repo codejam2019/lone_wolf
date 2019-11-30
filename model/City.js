@@ -4,6 +4,7 @@ var schema = mongoose.Schema;
 const citySchema = new schema({
   name: {
     type: String,
+    unique : true,
     required: true
   },
   country: {
@@ -12,10 +13,6 @@ const citySchema = new schema({
   },
   assigned_sensors:[{
       sensors_id: {
-        type: String,
-        required: true
-      },
-      sensor_name :{
         type: String,
         required: true
       }

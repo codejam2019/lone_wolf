@@ -4,6 +4,7 @@ var schema = mongoose.Schema;
 const citySchema = new schema({
     request_id: {
         type: String,
+        unique : true,
         required: true
     },
     city_id: {
