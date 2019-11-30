@@ -8,9 +8,9 @@ logRoute.post("/", logController.addLogDetails)
 logRoute.get('/temp', logController.getTempDetails)
 logRoute.get('/rain', logController.getRainDetails)
 logRoute.get('/hottest', logController.getHottestCity)
-logRoute.get('coolest', logController.getCoolest)
-logRoute.get('wettest', logController.getCoolest)
-logRoute.get('dryest', logController.getDryest)
+logRoute.get('/coolest', logController.getCoolest)
+logRoute.get('/wettest', logController.getCoolest)
+logRoute.get('/dryest', logController.getDryest)
 
 
 
