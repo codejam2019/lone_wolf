@@ -167,7 +167,7 @@ logControllers.getCoolest = function (req, res) {
         if (list.length == 0) {
             res.json({ msg: "no records present" })
         } else {
-            var min = -1;
+            var min = 10000000;
             var city_id = "";
             list.map((entry) => {
                 if (Number(entry.average_value) < Number(min)) {
@@ -244,7 +244,7 @@ logControllers.getDryest = function (req, res) {
         if (list.length == 0) {
             res.json({ msg: "no records present" })
         } else {
-            var min = -1;
+            var min = 10000000;
             var city_id = "";
             list.map((entry) => {
                 if (Number(entry.average_value) < Number(min)) {
