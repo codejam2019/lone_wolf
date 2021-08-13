@@ -32,7 +32,7 @@
     "jasmine": "^3.5.0",
     "log-timestamp": "^0.3.0",
     "mongoose": "^5.4.15",
-    "next": "^5.0.0",
+    "next": "^11.1.0",
     "react": "^16.2.0",
     "react-albus": "^2.0.0",
     "react-bootstrap": "^1.0.0-beta.5",
